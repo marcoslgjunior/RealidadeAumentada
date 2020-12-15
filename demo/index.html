@@ -1,0 +1,49 @@
+  <html>
+    <head>
+      <title>Floresta</title>
+      <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+      <script src="background-gradient.js"></script>
+    </head>
+    <body>
+      <a-scene renderer="colorManagement: true;">
+        <a-assets>
+        <a-mixin id="image" geometry="height: 2; width: 2"></a-mixin>
+        <a-mixin id="delayVisible" event-set__loaded="visible: true" visible="false"></a-mixin>
+        <img id="forest" src="floresta.jpg">
+        </a-assets>
+        <a-sky id="image-360" radius="10" src="#forest"></a-sky>
+        <a-box position="-6 5.5 -3" src="monkey1.png"></a-box>
+        <a-box position="6 5.5 -3" src="bird.png"></a-box>
+        <a-box position="0 1.5 -3" src="rocha.png"></a-box>
+        <a-camera>
+          <a-entity 
+          <a-cursor id="cursor"
+            animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+            animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+            animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
+          </a-cursor>
+        </a-camera>
+
+        <a-entity 
+        position="-6 4 -3"
+          geometry="primitive:plane; width:5; height:auto"
+          material="color: black"
+          text="value:Monitoramente e estudos de macacos em Extinção">
+        </a-entity>
+
+        <a-entity position="5 4.5 -3"
+          geometry="primitive:plane; width:5; height:auto"
+          material="color: black"
+          text="value:Monitoramento de passaros silvestres">
+        </a-entity>
+
+        <a-entity position="0 0 -3"
+          geometry="primitive:plane; width:5; height:auto"
+          material="color: black"
+          text="value:Estudos sobre biodiversidade e ecosistema">
+        
+        </a-entity>
+      
+      </a-scene>
+    </body>
+  </html>
